@@ -46,7 +46,7 @@
                                 </div>
                                 <div>
                                     <button type="submit" class="submit-btn" id="submit" onclick="result()">Submit</button>
-                                    <p class="action-left">3 try left</p>
+                                    <p class="action-left"><span id="negative">3</span> try left</p>
                                 </div>
                             </div>
                         </div>
@@ -93,6 +93,12 @@
                     } else {
                         document.getElementById('Mech').style.display = "none";
                         document.getElementById('NotMech').style.display = "block";
+                    }
+                    negative = document.getElementById('negative').innerText--;
+                    totalMaine = parseInt(negative);
+                    document.getElementById('negative').value = totalMaine;
+                    if (totalMaine == !0) {
+                        document.getElementById('submit').disabled = true
                     }
                 }
             </script>
